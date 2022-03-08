@@ -83,3 +83,4 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
       xz-utils \
       zip \
       zsync
+RUN pip install pip --upgrade

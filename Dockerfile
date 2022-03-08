@@ -47,6 +47,7 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
       m4 \
       mediainfo \
       mercurial \
+      mono-devel \
       net-tools \
       netcat \
       openssh-client \
@@ -59,6 +60,7 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
       pollinate \
       python-is-python3 \
       python3-pip \
+      python3.10-venv\
       rpm \
       rsync \
       shellcheck \

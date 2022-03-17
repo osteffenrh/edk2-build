@@ -84,3 +84,10 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
       zip \
       zsync
 RUN pip install pip --upgrade
+
+# Install newer Qemu from Canonical Server Team ppa
+RUN apt-get -y install software-properties-common && \
+    add-apt-repository --yes ppa:canonical-server/server-backports && \
+    apt-get --no-install-recommends install -y \
+      qemu-system-arm \
+      qemu-system-x86-64

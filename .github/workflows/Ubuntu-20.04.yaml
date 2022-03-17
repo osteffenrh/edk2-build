@@ -1,0 +1,19 @@
+name: "Ubuntu 20.04 Image"
+
+on:
+  push:
+    tags:
+      - '*'
+    paths:
+      - 'Ubuntu-20.04/**'
+  pull_request:
+    tags:
+      - '*'
+    paths:
+      - 'Ubuntu-20.04/**'
+
+jobs:
+  Build_Image:
+    uses: ./.github/workflows/build-image.yaml
+    with:
+      name: 'Ubuntu-20.04'

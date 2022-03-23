@@ -15,7 +15,7 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
       git \
       jq \
       m4 \
-      mono-runtime \
+      mono-devel \
       openssh-client \
       pass \
       pkg-config \

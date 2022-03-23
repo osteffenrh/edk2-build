@@ -22,6 +22,7 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
       fonts-noto-color-emoji \
       ftp \
       gcc-aarch64-linux-gnu \
+      gcc-arm-linux-gnueabihf \
       gnupg2 \
       haveged \
       imagemagick \

@@ -5,13 +5,15 @@ RUN apt-get -y full-upgrade
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
     apt-get -y --no-install-recommends install \
       binutils \
-      build-essential \
+      make \
+      libc6-dev \
       bzip2 \
       coreutils \
       curl \
-      gcc \
-      gcc-aarch64-linux-gnu \
-      gcc-arm-linux-gnueabihf \
+      gcc-10 \
+      g++-10 \
+      gcc-10-aarch64-linux-gnu \
+      gcc-10-arm-linux-gnueabihf \
       git \
       jq \
       m4 \
@@ -30,7 +32,28 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
       uuid-dev \
       xorriso \
       xz-utils \
-      zip
+      zip \
+      tar
+
+RUN \
+  update-alternatives \
+      --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 \
+      --slave   /usr/bin/gcov gcov /usr/bin/gcov-10 \
+      --slave   /usr/bin/cc cc /usr/bin/cc-10 && \
+  update-alternatives \
+      --install /usr/bin/g++ g++ /usr/bin/g++-10 100 \
+      --slave   /usr/bin/c++ c++ /usr/bin/g++-10 && \
+  update-alternatives \
+      --install /usr/bin/aarch64-linux-gnu-gcc aarch64-linux-gnu-gcc /usr/bin/aarch64-linux-gnu-gcc-10 100 \
+      --slave   /usr/bin/aarch64-linux-gnu-gcov aarch64-linux-gnu-gcov /usr/bin/aarch64-linux-gnu-gcov-10 \
+      --slave   /usr/bin/aarch64-linux-gnu-gcc-nm aarch64-linux-gnu-gcc-nm /usr/bin/aarch64-linux-gnu-gcc-nm-10 \
+      --slave   /usr/bin/aarch64-linux-gnu-gcc-ranlib aarch64-linux-gnu-gcc-ranlib /usr/bin/aarch64-linux-gnu-gcc-ranlib-10 \
+      --slave   /usr/bin/aarch64-linux-gnu-gcc-ar aarch64-linux-gnu-gcc-ar /usr/bin/aarch64-linux-gnu-gcc-ar-10 && \
+  update-alternatives \
+      --install /usr/bin/arm-linux-gnueabihf-gcc arm-linux-gnueabihf-gcc /usr/bin/arm-linux-gnueabihf-gcc-10 100 \
+      --slave   /usr/bin/arm-linux-gnueabihf-gcov arm-linux-gnueabihf-gcov /usr/bin/arm-linux-gnueabihf-gcov-10 \
+      --slave   /usr/bin/arm-linux-gnueabihf-gcc-nm arm-linux-gnueabihf-gcc-nm /usr/bin/arm-linux-gnueabihf-gcc-nm-10 \
+      --slave   /usr/bin/arm-linux-gnueabihf-gcc-ranlib arm-linux-gnueabihf-gcc-ranlib /usr/bin/arm-linux-gnueabihf-gcc-ranlib-10
 
 RUN pip install pip --upgrade
 

@@ -38,8 +38,11 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
 RUN \
   update-alternatives \
       --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 \
+      --slave   /usr/bin/cc cc /usr/bin/gcc-10 \
       --slave   /usr/bin/gcov gcov /usr/bin/gcov-10 \
-      --slave   /usr/bin/cc cc /usr/bin/gcc-10 && \
+      --slave   /usr/bin/nm gcc-nm /usr/bin/gcc-nm-10 \
+      --slave   /usr/bin/ranlib gcc-ranlib /usr/bin/gcc-ranlib-10 \
+      --slave   /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-10 && \
   update-alternatives \
       --install /usr/bin/g++ g++ /usr/bin/g++-10 100 \
       --slave   /usr/bin/c++ c++ /usr/bin/g++-10 && \

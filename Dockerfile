@@ -38,6 +38,16 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
       zip \
       tar
 
+# Get nasm 2.15 from upstream website.
+RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
+    apt-get -y --no-install-recommends install \
+      alien && \
+    curl "https://www.nasm.us/pub/nasm/releasebuilds/2.15.05/linux/nasm-2.15.05-0.fc31.x86_64.rpm" --output "nasm.rpm" && \
+    alien --to-deb --install ./nasm.rpm && \
+    rm -f *.rpm *.deb && \
+    apt -y remove alien && \
+    apt -y autoremove
+
 RUN \
   update-alternatives \
       --install /usr/bin/gcc gcc /usr/bin/gcc-10 100 \

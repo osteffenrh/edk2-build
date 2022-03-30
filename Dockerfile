@@ -16,6 +16,7 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
       jq \
       libx11-dev \
       libxext-dev \
+      acpica-tools \
       m4 \
       mono-devel \
       openssh-client \

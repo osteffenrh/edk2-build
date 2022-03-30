@@ -5,7 +5,8 @@ RUN apt-get -y full-upgrade
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
     apt-get -y --no-install-recommends install \
       binutils \
-      build-essential \
+      make \
+      libc6-dev \
       bzip2 \
       coreutils \
       curl \

@@ -14,6 +14,8 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
       gcc-arm-linux-gnueabihf \
       git \
       jq \
+      libx11-dev \
+      libxext-dev \
       m4 \
       mono-devel \
       openssh-client \

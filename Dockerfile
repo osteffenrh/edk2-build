@@ -34,7 +34,8 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
       uuid-dev \
       xorriso \
       xz-utils \
-      zip
+      zip \
+      tar
 
 # Get nasm 2.15 from upstream website.
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \

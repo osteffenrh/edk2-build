@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - ubuntu-20.04
-      - ubuntu-20.04-gcc10
+      - ubuntu-20.04-gcc-10
       - ubuntu-22.04
       - fedora-35
       - fedora-36

@@ -11,6 +11,7 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
       coreutils \
       curl \
       gcc \
+      g++ \
       gcc-aarch64-linux-gnu \
       gcc-arm-linux-gnueabihf \
       git \

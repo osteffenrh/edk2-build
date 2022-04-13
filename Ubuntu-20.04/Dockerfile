@@ -12,9 +12,6 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC \
       curl \
       gcc \
       g++ \
-      gcc-aarch64-linux-gnu \
-      gcc-arm-linux-gnueabihf \
-      gcc-riscv64-linux-gnu \
       git \
       libx11-dev \
       libxext-dev \
@@ -44,7 +41,3 @@ RUN apt-get -y --no-install-recommends install software-properties-common && \
     apt-get --no-install-recommends install -y \
       qemu-system-arm \
       qemu-system-x86-64
-
-ENV GCC5_AARCH64_PREFIX /usr/bin/aarch64-linux-gnu-
-ENV GCC5_ARM_PREFIX     /usr/bin/arm-linux-gnueabi-
-ENV GCC5_RISCV64_PREFIX /usr/bin/riscv64-unknown-elf-

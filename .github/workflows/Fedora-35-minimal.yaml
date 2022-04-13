@@ -1,14 +1,12 @@
 name: "Fedora 35 minimal Image"
 
 on:
-  push:
+  create:
     tags:
-      - '*'
+  push:
     paths:
       - 'Fedora-35-minimal/**'
   pull_request:
-    tags:
-      - '*'
     paths:
       - 'Fedora-35-minimal/**'
 

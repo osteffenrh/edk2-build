@@ -1,14 +1,12 @@
 name: "Ubuntu 22.04 Image"
 
 on:
-  push:
+  create:
     tags:
-      - '*'
+  push:
     paths:
       - 'Ubuntu-22.04/**'
   pull_request:
-    tags:
-      - '*'
     paths:
       - 'Ubuntu-22.04/**'
 

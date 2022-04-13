@@ -1,0 +1,19 @@
+name: "Fedora 35 minimal Image"
+
+on:
+  push:
+    tags:
+      - '*'
+    paths:
+      - 'Fedora-35-minimal/**'
+  pull_request:
+    tags:
+      - '*'
+    paths:
+      - 'Fedora-35-minimal/**'
+
+jobs:
+  Build_Image:
+    uses: ./.github/workflows/build-image.yaml
+    with:
+      name: "Fedora-35-minimal"

@@ -1,6 +1,7 @@
 name: "Ubuntu 22.04 Image"
 
 on:
+  workflow_dispatch:
   create:
     tags:
   push:

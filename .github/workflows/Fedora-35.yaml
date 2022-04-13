@@ -1,6 +1,9 @@
 name: "Fedora 35 Image"
 
 on:
+  workflow_dispatch:
+    tags:
+      description: "Rebuild Image"
   push:
     tags:
       - '*'

@@ -1,9 +1,5 @@
 FROM registry.fedoraproject.org/fedora-minimal:35
 
-# Basic devel tools
-# RUN dnf --assumeyes groupinstall "Development Tools"
-
-# EDK2 prerequisites
 RUN microdnf \
       --assumeyes \
       --nodocs \

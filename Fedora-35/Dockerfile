@@ -1,33 +1,30 @@
-FROM registry.fedoraproject.org/fedora:35
+FROM registry.fedoraproject.org/fedora-minimal:35
 
-# Basic devel tools
-# RUN dnf --assumeyes groupinstall "Development Tools"
-
-# EDK2 prerequisites
-RUN dnf install \
-          --assumeyes \
-          --nodocs \
-          --setopt=install_weak_deps=False \
-      acpica-tools \
-      g++ \
-      gcc \
-      gcc-aarch64-linux-gnu \
-      gcc-arm-linux-gnu \
-      gcc-riscv64-linux-gnu \
-      git \
-      libX11-devel \
-      libXext-devel \
-      libuuid-devel \
-      make \
-      nuget \
-      nasm \
-      python \
-      python3-distutils-extra \
-      python3-pip \
-      python3-setuptools \
-      qemu-system-aarch64-core \
-      qemu-system-arm-core \
-      qemu-system-x86-core
+RUN microdnf \
+      --assumeyes \
+      --nodocs \
+      --setopt=install_weak_deps=0 \
+      install \
+        acpica-tools \
+        g++ \
+        gcc \
+        gcc-aarch64-linux-gnu \
+        gcc-arm-linux-gnu \
+        gcc-riscv64-linux-gnu \
+        git \
+        libX11-devel \
+        libXext-devel \
+        libuuid-devel \
+        make \
+        nuget \
+        nasm \
+        python \
+        python3-distutils-extra \
+        python3-pip \
+        python3-setuptools \
+        qemu-system-aarch64-core \
+        qemu-system-arm-core \
+        qemu-system-x86-core
 
 RUN pip install pip --upgrade
 

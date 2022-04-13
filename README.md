@@ -1,8 +1,11 @@
 # Unofficial build images for EDK2 CI
 
-Container files are on these branches:
 
-- https://github.com/osteffenrh/edk2-build-images/tree/ubuntu-20.04
-- https://github.com/osteffenrh/edk2-build-images/tree/ubuntu-20.04-gcc-11
-- https://github.com/osteffenrh/edk2-build-images/tree/ubuntu-22.04
+| Image        | gcc for x86 | gcc for arm | gcc for aarch64 | gcc for RiscV |
+| ------------ | ----------- | ----------- | --------------- | ------------- |
+| Ubuntu 20.04 |      9      |     --      |        --       |       --      |
+| Ubuntu 22.04 |     11      |     11      |        11       |       11      |
+| Fedora 35    |     11      |     11      |        11       |       11      |
 
+
+Ubuntu 22.04 currently does not work (see Issue #2)

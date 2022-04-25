@@ -1,0 +1,22 @@
+name: "Fedora 36 Image"
+
+on:
+  workflow_dispatch:
+  create:
+    tags:
+  push:
+    tags:
+      - '*'
+    paths:
+      - 'Fedora-36/**'
+  pull_request:
+    tags:
+      - '*'
+    paths:
+      - 'Fedora-36/**'
+
+jobs:
+  Build_Image:
+    uses: ./.github/workflows/build-image.yaml
+    with:
+      name: "Fedora-36"

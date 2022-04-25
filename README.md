@@ -8,4 +8,4 @@
 | [Fedora 35](https://github.com/osteffenrh/edk2-build-images/pkgs/container/edk2-build-images%2Ffedora-35)       |     11      |     11      |        11       |       11      |
 
 
-Ubuntu 22.04 currently does not work (see Issue [#2](https://github.com/osteffenrh/edk2-build-images/issues/2))
+Ubuntu 22.04 requires `-fno-stack-protector` (See https://edk2.groups.io/g/devel/message/89123).

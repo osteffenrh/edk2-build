@@ -2,16 +2,14 @@ name: "Fedora 36 Image"
 
 on:
   workflow_dispatch:
-  create:
-    tags:
+
   push:
-    tags:
-      - '*'
+    branches: [ main ]
     paths:
       - 'Fedora-36/**'
+
   pull_request:
-    tags:
-      - '*'
+    branches: [ main ]
     paths:
       - 'Fedora-36/**'
 

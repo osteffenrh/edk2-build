@@ -2,12 +2,12 @@ name: "Ubuntu 20.04 Image"
 
 on:
   workflow_dispatch:
-  create:
-    tags:
   push:
+    branches: [ main ]
     paths:
       - 'Ubuntu-20.04/**'
   pull_request:
+    branches: [ main ]
     paths:
       - 'Ubuntu-20.04/**'
 

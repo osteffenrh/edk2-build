@@ -18,6 +18,9 @@ jobs:
       packages: write
 
     steps:
+      - name: Run a one-line script
+        run: echo Hello, world!
+          
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -42,6 +45,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ${{ inputs.name }}
-          push: ${{ github.ref == 'refs/heads/main' }}
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

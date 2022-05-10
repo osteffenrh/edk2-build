@@ -22,7 +22,6 @@ RUN microdnf \
         python3-pip \
         python3-setuptools \
         qemu-system-aarch64-core \
-        qemu-system-arm-core \
         qemu-system-x86-core
 
 RUN pip install pip --upgrade

@@ -9,7 +9,6 @@ RUN microdnf \
         g++ \
         gcc \
         gcc-aarch64-linux-gnu \
-        gcc-arm-linux-gnu \
         gcc-riscv64-linux-gnu \
         git \
         libX11-devel \

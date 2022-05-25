@@ -3,9 +3,9 @@ name: "Build Docker Image"
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ main, layers ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, layers ]
 
 env:
   REGISTRY: ghcr.io

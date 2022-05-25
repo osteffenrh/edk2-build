@@ -33,8 +33,8 @@ jobs:
       - name: Build
         run: |
           short_sha=$(git rev-parse --short "$GITHUB_SHA")
-          docker build --target build --tag "${BUILD_IMAGE}:${short_sha}"
-          docker build --target test --tag "${TEST_IMAGE}:${short_sha}"
+          docker build --target build --tag "${BUILD_IMAGE}:${short_sha}" - < Dockerfile
+          docker build --target test --tag "${TEST_IMAGE}:${short_sha}" - < Dockerfile
         shell: bash
 
       - name: Push

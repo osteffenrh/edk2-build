@@ -30,9 +30,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Set tag
+        run: echo "short_sha=$(git rev-parse --short $GITHUB_SHA)" >> $GITHUB_ENV
+
       - name: Build
         run: |
-          short_sha=$(git rev-parse --short "$GITHUB_SHA")
           docker build --target build --tag "${BUILD_IMAGE}:${short_sha}" - < Dockerfile
           docker build --target test --tag "${TEST_IMAGE}:${short_sha}" - < Dockerfile
         shell: bash
@@ -40,7 +42,6 @@ jobs:
       - name: Push
         if: ${{ github.ref == 'refs/heads/layers' }}
         run: |
-          short_sha=$(git rev-parse --short "$GITHUB_SHA")
           docker push "${BUILD_IMAGE}:${short_sha}"
           docker push "${TEST_IMAGE}:${short_sha}"
         shell: bash

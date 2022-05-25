@@ -40,7 +40,9 @@ jobs:
       - name: Push
         if: ${{ github.ref == 'refs/heads/layers' }}
         run: |
+          short_sha=$(git rev-parse --short "$GITHUB_SHA")
           docker push "${BUILD_IMAGE}:${short_sha}"
           docker push "${TEST_IMAGE}:${short_sha}"
+        shell: bash
 
 

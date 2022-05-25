@@ -38,7 +38,7 @@ jobs:
         shell: bash
 
       - name: Push
-        if: ${{ github.ref == 'refs/heads/main' }}
+        if: ${{ github.ref == 'refs/heads/layers' }}
         run: |
           docker push "${BUILD_IMAGE}:${short_sha}"
           docker push "${TEST_IMAGE}:${short_sha}"
